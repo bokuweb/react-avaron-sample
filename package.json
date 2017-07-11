@@ -1,0 +1,43 @@
+{
+  "name": "react-avaron-regression-test-sample",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/bokuweb/react-avaron-regression-test-sample.git",
+  "author": "bokuweb <bokuweb12@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "avaron test/*.test.js --renderer"
+  },
+  "dependencies": {
+    "material-ui": "^0.18.6",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "avaron": "^0.0.6",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "react-tap-event-plugin": "^2.0.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0",
+      "react"
+    ]
+  },
+  "avaron": {
+    "babel": "inherit",
+    "require": [
+      "babel-register",
+      "babel-polyfill"
+    ],
+    "windowOptions": {
+      "title": "avaron"
+    },
+    "fixture": "./fixture.html"
+  }
+}
