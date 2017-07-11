@@ -1,0 +1,20 @@
+machine:
+  node:
+    version: 6.9.2
+  environment:
+    YARN_VERSION: 0.23.4
+    PATH: "${PATH}:${HOME}/.yarn/bin"
+
+dependencies:
+  cache_directories:
+    - ~/.cache/yarn/
+    - ~/.yarn/
+  pre:
+    - sudo apt-get install fonts-migmix 
+  override:
+    - if [[ ! -e ~/.yarn/bin/yarn || $(yarn --version) != "${YARN_VERSION}" ]]; then curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version $YARN_VERSION; fi
+    - yarn install
+
+test:
+  override:
+    - yarn test
